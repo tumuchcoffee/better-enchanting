@@ -7,7 +7,7 @@ A NeoForge mod for Minecraft that reimagines the enchanting system around a cent
 - Mod project lives at `minecraft/26.1.2/neoforge/26.1.2.77/` (path encodes Minecraft version / loader / loader version, to allow other version combos alongside it later)
 - Build: `cd minecraft/26.1.2/neoforge/26.1.2.77 && ./gradlew build`
 - Compile only: `cd minecraft/26.1.2/neoforge/26.1.2.77 && ./gradlew compileJava`
-- GitHub repo (target for pushes): https://github.com/tumuchcoffee/better-enchanting (currently empty — nothing pushed yet, pending user review)
+- GitHub repo: https://github.com/tumuchcoffee/better-enchanting (mod scaffold pushed under `minecraft/26.1.2/neoforge/26.1.2.77/`)
 
 ## Stack
 
@@ -18,12 +18,12 @@ A NeoForge mod for Minecraft that reimagines the enchanting system around a cent
 
 ## Where things live
 
-- `minecraft/26.1.2/neoforge/26.1.2.77/` — the mod's Gradle project (Java sources under `src/main/java/com/tumuchcoffee/betterenchanting/`)
+- `minecraft/26.1.2/neoforge/26.1.2.77/` — the mod's Gradle project (Java sources under `src/main/java/com/goofyahgames/betterenchanting/`)
 - `attached_assets/Better_Enchanting_1783377127066.md` — design doc, source of truth for mod mechanics (pedestal tiers, enchanting levels 1-5)
 
 ## Architecture decisions
 
-- Mod id: `better_enchanting`, group: `com.tumuchcoffee.betterenchanting`
+- Mod id: `better_enchanting`, group: `com.goofyahgames.betterenchanting`
 - First-time Minecraft decompile/patch/recompile (needed once to produce a compilable NeoForge userdev classpath) takes ~3-4 minutes and must run uninterrupted; in this sandbox, ephemeral bash tool calls get killed between calls, so this step must be run via a temporary Replit workflow (long-running background process) rather than a foreground bash command — see `.agents/memory/minecraft-mod-build.md`.
 
 ## Product

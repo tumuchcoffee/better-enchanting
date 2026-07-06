@@ -1,4 +1,4 @@
-package com.tumuchcoffee.betterenchanting;
+package com.goofyahgames.betterenchanting;
 
 import java.util.List;
 import java.util.Set;
