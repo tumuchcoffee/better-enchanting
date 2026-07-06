@@ -47,3 +47,16 @@ Thumbs.db
 # Replit
 .cache/
 .local/
+
+# Gradle / Java (Minecraft mod)
+.gradle/
+**/build/
+!src/**/build/
+*.jar
+*.class
+!gradle/wrapper/gradle-wrapper.jar
+run/
+runs/
+logs/
+crash-reports/
+*.hprof
