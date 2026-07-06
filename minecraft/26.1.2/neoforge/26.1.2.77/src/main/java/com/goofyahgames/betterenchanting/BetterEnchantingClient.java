@@ -1,4 +1,4 @@
-package com.tumuchcoffee.betterenchanting;
+package com.goofyahgames.betterenchanting;
 
 import net.minecraft.client.Minecraft;
 import net.neoforged.api.distmarker.Dist;

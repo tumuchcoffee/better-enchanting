@@ -1,4 +1,4 @@
-package com.tumuchcoffee.betterenchanting;
+package com.goofyahgames.betterenchanting;
 
 import org.slf4j.Logger;
 
