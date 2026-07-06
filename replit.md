@@ -1,45 +1,43 @@
-# [Project name]
+# Better Enchanting
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+A NeoForge mod for Minecraft that reimagines the enchanting system around a central enchanting table surrounded by upgradeable pedestals (Levels 1-5, progressing by upgrading pedestal materials).
 
 ## Run & Operate
 
-- `pnpm --filter @workspace/api-server run dev` — run the API server (port 5000)
-- `pnpm run typecheck` — full typecheck across all packages
-- `pnpm run build` — typecheck + build all packages
-- `pnpm --filter @workspace/api-spec run codegen` — regenerate API hooks and Zod schemas from the OpenAPI spec
-- `pnpm --filter @workspace/db run push` — push DB schema changes (dev only)
-- Required env: `DATABASE_URL` — Postgres connection string
+- Mod project lives at `minecraft/26.1.2/neoforge/26.1.2.77/` (path encodes Minecraft version / loader / loader version, to allow other version combos alongside it later)
+- Build: `cd minecraft/26.1.2/neoforge/26.1.2.77 && ./gradlew build`
+- Compile only: `cd minecraft/26.1.2/neoforge/26.1.2.77 && ./gradlew compileJava`
+- GitHub repo (target for pushes): https://github.com/tumuchcoffee/better-enchanting (currently empty — nothing pushed yet, pending user review)
 
 ## Stack
 
-- pnpm workspaces, Node.js 24, TypeScript 5.9
-- API: Express 5
-- DB: PostgreSQL + Drizzle ORM
-- Validation: Zod (`zod/v4`), `drizzle-zod`
-- API codegen: Orval (from OpenAPI spec)
-- Build: esbuild (CJS bundle)
+- Minecraft 26.1.2, NeoForge 26.1.2.77 (ModDevGradle 2.0.141)
+- Java 25 (auto-downloaded by Gradle's foojay toolchain resolver — the Nix env only ships up to JDK 24)
+- Gradle 9.2.1 (wrapper)
+- This lives alongside an otherwise-unused pnpm monorepo template (`artifacts/`, `lib/`, etc.) — the mod is a standalone Java/Gradle project, not a pnpm workspace package. See the `pnpm-workspace` skill only if web/mobile artifacts are added later.
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- `minecraft/26.1.2/neoforge/26.1.2.77/` — the mod's Gradle project (Java sources under `src/main/java/com/tumuchcoffee/betterenchanting/`)
+- `attached_assets/Better_Enchanting_1783377127066.md` — design doc, source of truth for mod mechanics (pedestal tiers, enchanting levels 1-5)
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+- Mod id: `better_enchanting`, group: `com.tumuchcoffee.betterenchanting`
+- First-time Minecraft decompile/patch/recompile (needed once to produce a compilable NeoForge userdev classpath) takes ~3-4 minutes and must run uninterrupted; in this sandbox, ephemeral bash tool calls get killed between calls, so this step must be run via a temporary Replit workflow (long-running background process) rather than a foreground bash command — see `.agents/memory/minecraft-mod-build.md`.
 
 ## Product
 
-_Describe the high-level user-facing capabilities of this app once they exist._
+Pedestal-based progressive enchanting: craft at Level 1 on a normal crafting table, then upgrade Level 2-5 by placing the item on a center pedestal surrounded by better pedestal materials. Full mechanics still to be implemented — current code is renamed MDK scaffold only (no real pedestal/enchanting logic yet).
 
 ## User preferences
 
-_Populate as you build — explicit user instructions worth remembering across sessions._
+- User wants to review mod code personally before anything is pushed to their GitHub repo — do not push without explicit confirmation each time.
 
 ## Gotchas
 
-_Populate as you build — sharp edges, "always run X before Y" rules._
+- Long-running Gradle tasks (e.g. first-time Minecraft decompile) must go through a temporary workflow, not a plain foreground/background bash call — see `.agents/memory/minecraft-mod-build.md`.
 
 ## Pointers
 
-- See the `pnpm-workspace` skill for workspace structure, TypeScript setup, and package details
+- See the `pnpm-workspace` skill for workspace structure, TypeScript setup, and package details (only relevant if a web/mobile artifact is added to this project)

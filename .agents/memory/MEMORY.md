@@ -1,0 +1,1 @@
+- [Long Minecraft/Gradle builds in this sandbox](minecraft-mod-build.md) — first-time NeoForge decompiles need a temporary workflow, not bash; foojay auto-downloads missing JDKs.
