@@ -11,13 +11,13 @@ A NeoForge mod for Minecraft that reimagines the enchanting system around a cent
 | Java | 25 (auto-downloaded by Gradle's foojay toolchain resolver — Nix env only ships up to JDK 24) |
 | Gradle | `9.2.1` (wrapper) |
 | Mod id | `better_enchanting` |
-| Root namespace / group | `com.goofyahgames.betterenchanting` |
+| Root namespace / group | `com.goofyahgames.enchantmentmod` |
 | Mod version | `0.1.0` |
 
 ### Project Structure
 - Mod lives at `minecraft/26.1.2/neoforge/26.1.2.77/` — the path deliberately encodes MC version / loader / loader version, so other version combinations can sit alongside it later.
 - This is a standalone Java/Gradle project, **not** part of the pnpm monorepo workspace (`artifacts/`, `lib/`, etc. are unused template scaffolding for this project).
-- Java sources under `src/main/java/com/goofyahgames/betterenchanting/`:
+- Java sources under `src/main/java/com/goofyahgames/enchantmentmod/`:
   - `BetterEnchanting.java` — main mod class (currently template placeholders: `enchanted_pedestal` block, `arcane_dust` item, creative tab)
   - `BetterEnchantingClient.java` — client-side setup
   - `Config.java` — example config (not yet reflecting real mechanics)
