@@ -1,4 +1,4 @@
-# Better Enchanting
+# Enchantment Mod
 
 A NeoForge mod for Minecraft that reimagines the enchanting system around a central enchanting table surrounded by upgradeable pedestals (Levels 1-5, progressing by upgrading pedestal materials).
 
@@ -23,7 +23,7 @@ A NeoForge mod for Minecraft that reimagines the enchanting system around a cent
 
 ## Architecture decisions
 
-- Mod id: `better_enchanting`, group: `com.goofyahgames.enchantmentmod`
+- Mod id: `enchantment_mod`, group: `com.goofyahgames.enchantmentmod`
 - First-time Minecraft decompile/patch/recompile (needed once to produce a compilable NeoForge userdev classpath) takes ~3-4 minutes and must run uninterrupted; in this sandbox, ephemeral bash tool calls get killed between calls, so this step must be run via a temporary Replit workflow (long-running background process) rather than a foreground bash command — see `.agents/memory/minecraft-mod-build.md`.
 
 ## Product

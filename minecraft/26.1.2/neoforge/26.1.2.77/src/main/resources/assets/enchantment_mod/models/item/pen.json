@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "better_enchanting:item/pen"
+    "layer0": "enchantment_mod:item/pen"
   }
 }

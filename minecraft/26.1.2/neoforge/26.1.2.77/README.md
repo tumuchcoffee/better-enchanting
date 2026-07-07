@@ -1,4 +1,4 @@
-# Better Enchanting — Project Summary
+# Enchantment Mod — Project Summary
 
 ### Project Goal
 A NeoForge mod for Minecraft that reimagines the enchanting system around a central enchanting table surrounded by upgradeable pedestals. Enchantments are crafted at Level 1 on a normal crafting table, then progressively upgraded (Level 2–5) by placing the item on a center pedestal surrounded by better pedestal materials. Full mechanics are documented in `attached_assets/Better_Enchanting_1783377127066.md` (source of truth, not yet implemented).
@@ -10,7 +10,7 @@ A NeoForge mod for Minecraft that reimagines the enchanting system around a cent
 | Mod loader | NeoForge `26.1.2.77` (ModDevGradle `2.0.141`) |
 | Java | 25 (auto-downloaded by Gradle's foojay toolchain resolver — Nix env only ships up to JDK 24) |
 | Gradle | `9.2.1` (wrapper) |
-| Mod id | `better_enchanting` |
+| Mod id | `enchantment_mod` |
 | Root namespace / group | `com.goofyahgames.enchantmentmod` |
 | Mod version | `0.1.0` |
 
@@ -20,6 +20,7 @@ A NeoForge mod for Minecraft that reimagines the enchanting system around a cent
 - Java sources under `src/main/java/com/goofyahgames/enchantmentmod/`:
   - `BetterEnchanting.java` — main mod class (currently template placeholders: `enchanted_pedestal` block, `arcane_dust` item, creative tab)
   - `BetterEnchantingClient.java` — client-side setup
+
   - `Config.java` — example config (not yet reflecting real mechanics)
 
 ### GitHub

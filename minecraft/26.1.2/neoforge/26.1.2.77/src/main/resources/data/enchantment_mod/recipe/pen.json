@@ -6,7 +6,7 @@
     { "item": "minecraft:string" }
   ],
   "result": {
-    "id": "better_enchanting:pen",
+    "id": "enchantment_mod:pen",
     "count": 1
   }
 }

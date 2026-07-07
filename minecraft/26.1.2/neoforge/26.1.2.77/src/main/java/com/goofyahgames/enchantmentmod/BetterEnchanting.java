@@ -35,14 +35,14 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 @Mod(BetterEnchanting.MODID)
 public class BetterEnchanting {
     // Define mod id in a common place for everything to reference
-    public static final String MODID = "better_enchanting";
+    public static final String MODID = "enchantment_mod";
     // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
-    // Create a Deferred Register to hold Blocks which will all be registered under the "better_enchanting" namespace
+    // Create a Deferred Register to hold Blocks which will all be registered under the "enchantment_mod" namespace
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MODID);
-    // Create a Deferred Register to hold Items which will all be registered under the "better_enchanting" namespace
+    // Create a Deferred Register to hold Items which will all be registered under the "enchantment_mod" namespace
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MODID);
-    // Create a Deferred Register to hold CreativeModeTabs which will all be registered under the "better_enchanting" namespace
+    // Create a Deferred Register to hold CreativeModeTabs which will all be registered under the "enchantment_mod" namespace
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
 
     // Creates a new Block with the id "examplemod:enchanted_pedestal", combining the namespace and path
@@ -57,9 +57,9 @@ public class BetterEnchanting {
     // Pen item — crafted from ink sac + stick + string
     public static final DeferredItem<Item> PEN = ITEMS.registerSimpleItem("pen");
 
-    // Creates a creative tab with the id "examplemod:better_enchanting_tab" for the example item, that is placed after the combat tab
-    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> BETTER_ENCHANTING_TAB = CREATIVE_MODE_TABS.register("better_enchanting_tab", () -> CreativeModeTab.builder()
-            .title(Component.translatable("itemGroup.better_enchanting")) //The language key for the title of your CreativeModeTab
+    // Creates a creative tab with the id "enchantment_mod:enchantment_mod_tab" for the example item, that is placed after the combat tab
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> ENCHANTMENT_MOD_TAB = CREATIVE_MODE_TABS.register("enchantment_mod_tab", () -> CreativeModeTab.builder()
+            .title(Component.translatable("itemGroup.enchantment_mod")) //The language key for the title of your CreativeModeTab
             .withTabsBefore(CreativeModeTabs.COMBAT)
             .icon(() -> ARCANE_DUST.get().getDefaultInstance())
             .displayItems((parameters, output) -> {
