@@ -54,13 +54,17 @@ public class BetterEnchanting {
     public static final DeferredItem<Item> ARCANE_DUST = ITEMS.registerSimpleItem("arcane_dust", p -> p.food(new FoodProperties.Builder()
             .alwaysEdible().nutrition(1).saturationModifier(2f).build()));
 
+    // Pen item — crafted from ink sac + stick + string
+    public static final DeferredItem<Item> PEN = ITEMS.registerSimpleItem("pen");
+
     // Creates a creative tab with the id "examplemod:better_enchanting_tab" for the example item, that is placed after the combat tab
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> BETTER_ENCHANTING_TAB = CREATIVE_MODE_TABS.register("better_enchanting_tab", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.better_enchanting")) //The language key for the title of your CreativeModeTab
             .withTabsBefore(CreativeModeTabs.COMBAT)
             .icon(() -> ARCANE_DUST.get().getDefaultInstance())
             .displayItems((parameters, output) -> {
-                output.accept(ARCANE_DUST.get()); // Add the example item to the tab. For your own tabs, this method is preferred over the event
+                output.accept(ARCANE_DUST.get());
+                output.accept(PEN.get());
             }).build());
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.
