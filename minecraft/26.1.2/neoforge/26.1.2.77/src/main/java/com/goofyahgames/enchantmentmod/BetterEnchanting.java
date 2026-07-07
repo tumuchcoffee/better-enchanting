@@ -1,4 +1,4 @@
-package com.goofyahgames.betterenchanting;
+package com.goofyahgames.enchantmentmod;
 
 import org.slf4j.Logger;
 

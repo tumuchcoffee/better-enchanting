@@ -1,4 +1,4 @@
-package com.goofyahgames.betterenchanting;
+package com.goofyahgames.enchantmentmod;
 
 import net.minecraft.client.Minecraft;
 import net.neoforged.api.distmarker.Dist;

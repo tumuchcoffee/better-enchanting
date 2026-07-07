@@ -1,4 +1,4 @@
-package com.goofyahgames.betterenchanting;
+package com.goofyahgames.enchantmentmod;
 
 import java.util.List;
 import java.util.Set;
