@@ -61,7 +61,7 @@ public class BetterEnchanting {
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> ENCHANTMENT_MOD_TAB = CREATIVE_MODE_TABS.register("enchantment_mod_tab", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.enchantment_mod")) //The language key for the title of your CreativeModeTab
             .withTabsBefore(CreativeModeTabs.COMBAT)
-            .icon(() -> ARCANE_DUST.get().getDefaultInstance())
+            .icon(() -> net.minecraft.world.item.Items.ENCHANTED_BOOK.getDefaultInstance())
             .displayItems((parameters, output) -> {
                 output.accept(ARCANE_DUST.get());
                 output.accept(PEN.get());
