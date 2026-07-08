@@ -1,9 +1,9 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    { "item": "minecraft:ink_sac" },
-    { "item": "minecraft:stick" },
-    { "item": "minecraft:string" }
+    "minecraft:ink_sac",
+    "minecraft:stick",
+    "minecraft:string"
   ],
   "result": {
     "id": "enchantment_mod:pen",

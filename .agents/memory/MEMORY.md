@@ -1,1 +1,2 @@
 - [Long Minecraft/Gradle builds in this sandbox](minecraft-mod-build.md) — first-time NeoForge decompiles need a temporary workflow, not bash; foojay auto-downloads missing JDKs.
+- [Minecraft recipe ingredient format](minecraft-recipe-format.md) — 1.21.2+/26.x recipes use plain item-ID strings, not {"item":...}; bad ingredient silently skips the recipe.
