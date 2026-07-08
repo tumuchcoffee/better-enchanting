@@ -52,6 +52,9 @@ public class BetterEnchanting {
     // Pen item — crafted from ink sac + stick + string
     public static final DeferredItem<Item> PEN = ITEMS.registerSimpleItem("pen");
 
+    // Stone Tablet item — crafted from lapis lazuli and stone (shapeless)
+    public static final DeferredItem<Item> STONE_TABLET = ITEMS.registerSimpleItem("stone_tablet");
+
     // Creates a creative tab with the id "enchantment_mod:enchantment_mod_tab" for the example item, that is placed after the combat tab
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> ENCHANTMENT_MOD_TAB = CREATIVE_MODE_TABS.register("enchantment_mod_tab", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.enchantment_mod")) //The language key for the title of your CreativeModeTab
@@ -59,6 +62,7 @@ public class BetterEnchanting {
             .icon(() -> net.minecraft.world.item.Items.ENCHANTED_BOOK.getDefaultInstance())
             .displayItems((parameters, output) -> {
                 output.accept(PEN.get());
+                output.accept(STONE_TABLET.get());
             }).build());
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "minecraft:lapis_lazuli",
+    "minecraft:stone",
+    "minecraft:lapis_lazuli",
+    "minecraft:stone"
+  ],
+  "result": {
+    "id": "enchantment_mod:stone_tablet",
+    "count": 1
+  }
+}
