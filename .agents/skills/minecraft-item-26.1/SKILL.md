@@ -1,5 +1,5 @@
 ---
-name: minecraft-26.1-item
+name: minecraft-item-26.1
 description: Everything required to add a new simple item to this NeoForge mod targeting Minecraft 26.1.x. Use when the user asks to add an item, create an item, or register a new item in the enchantment mod.
 ---
 
