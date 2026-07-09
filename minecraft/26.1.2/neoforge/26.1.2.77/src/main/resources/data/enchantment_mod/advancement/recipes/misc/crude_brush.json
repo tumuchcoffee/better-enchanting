@@ -24,7 +24,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "enchantment_mod:pen"
+        "recipe": "enchantment_mod:crude_brush"
       }
     }
   },
@@ -37,7 +37,7 @@
   ],
   "rewards": {
     "recipes": [
-      "enchantment_mod:pen"
+      "enchantment_mod:crude_brush"
     ]
   }
 }

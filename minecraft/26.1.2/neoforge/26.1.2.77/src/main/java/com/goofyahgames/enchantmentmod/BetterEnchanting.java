@@ -49,8 +49,8 @@ public class BetterEnchanting {
     // Creates a new BlockItem with the id "examplemod:enchanted_pedestal", combining the namespace and path
     public static final DeferredItem<BlockItem> PEDESTAL_ITEM = ITEMS.registerSimpleBlockItem("enchanted_pedestal", PEDESTAL);
 
-    // Pen item — crafted from ink sac + stick + string
-    public static final DeferredItem<Item> PEN = ITEMS.registerSimpleItem("pen");
+    // Crude Brush item — crafted from ink sac + stick + string
+    public static final DeferredItem<Item> CRUDE_BRUSH = ITEMS.registerSimpleItem("crude_brush");
 
     // Stone Tablet item — crafted from lapis lazuli and stone (shapeless)
     public static final DeferredItem<Item> STONE_TABLET = ITEMS.registerSimpleItem("stone_tablet");
@@ -61,7 +61,7 @@ public class BetterEnchanting {
             .withTabsBefore(CreativeModeTabs.COMBAT)
             .icon(() -> net.minecraft.world.item.Items.ENCHANTED_BOOK.getDefaultInstance())
             .displayItems((parameters, output) -> {
-                output.accept(PEN.get());
+                output.accept(CRUDE_BRUSH.get());
                 output.accept(STONE_TABLET.get());
             }).build());
 
