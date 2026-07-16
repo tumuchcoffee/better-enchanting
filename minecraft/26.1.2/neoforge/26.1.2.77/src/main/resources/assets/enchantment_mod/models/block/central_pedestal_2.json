@@ -1,8 +1,9 @@
 {
-  "parent": "minecraft:block/cube_bottom_top",
+  "parent": "minecraft:block/enchanting_table",
   "textures": {
     "bottom": "enchantment_mod:block/center_pedestal_bottom",
     "top": "enchantment_mod:block/center_pedestal_top",
-    "side": "enchantment_mod:block/center_pedestal_side"
+    "side": "enchantment_mod:block/center_pedestal_side",
+    "particle": "enchantment_mod:block/center_pedestal_side"
   }
 }
