@@ -50,7 +50,7 @@ public class BetterEnchanting {
     public static final DeferredItem<BlockItem> PEDESTAL_ITEM = ITEMS.registerSimpleBlockItem("enchanted_pedestal", PEDESTAL);
 
     // Level 2 central pedestal — crafted from copper ingots, glass, and deepslate
-    public static final DeferredBlock<Block> CENTRAL_PEDESTAL_2 = BLOCKS.registerSimpleBlock("central_pedestal_2", p -> p.mapColor(MapColor.COLOR_ORANGE));
+    public static final DeferredBlock<Block> CENTRAL_PEDESTAL_2 = BLOCKS.registerSimpleBlock("central_pedestal_2", p -> p.mapColor(MapColor.COLOR_ORANGE).noOcclusion());
     public static final DeferredItem<BlockItem> CENTRAL_PEDESTAL_2_ITEM = ITEMS.registerSimpleBlockItem("central_pedestal_2", CENTRAL_PEDESTAL_2);
 
     // Crude Brush item — crafted from ink sac + stick + string
