@@ -53,6 +53,16 @@ Register the five tiered pedestal blocks and implement multiblock structure dete
 - Any GUI or player feedback beyond a server log confirming detection
 - Enchanting logic
 
+### Crafting Recipes
+
+**Level 2 Central Pedestal** — shaped crafting table recipe:
+
+|  | Left | Centre | Right |
+|---|---|---|---|
+| **Top** | Copper Ingot | Copper Ingot | Copper Ingot |
+| **Middle** | Glass | Deepslate | Glass |
+| **Bottom** | Deepslate | Deepslate | Deepslate |
+
 ### Steps
 1. **Register five pedestal blocks** — one block per tier, each a simple full block with its own registry name and placeholder stone-coloured texture. Remove/replace the existing single `enchanted_pedestal` block.
 2. **Define the layout constant** — encode the 8-pedestal formation: in each cardinal direction, step 2 blocks out then 1 block left and 1 block right. Store as a static list of relative BlockPos offsets.
