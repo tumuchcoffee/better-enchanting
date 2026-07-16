@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CCC",
+    "GDG",
+    "DDD"
+  ],
+  "key": {
+    "C": "minecraft:copper_ingot",
+    "G": "minecraft:glass",
+    "D": "minecraft:deepslate"
+  },
+  "result": {
+    "id": "enchantment_mod:central_pedestal_2",
+    "count": 1
+  }
+}

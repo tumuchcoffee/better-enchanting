@@ -49,6 +49,10 @@ public class BetterEnchanting {
     // Creates a new BlockItem with the id "examplemod:enchanted_pedestal", combining the namespace and path
     public static final DeferredItem<BlockItem> PEDESTAL_ITEM = ITEMS.registerSimpleBlockItem("enchanted_pedestal", PEDESTAL);
 
+    // Level 2 central pedestal — crafted from copper ingots, glass, and deepslate
+    public static final DeferredBlock<Block> CENTRAL_PEDESTAL_2 = BLOCKS.registerSimpleBlock("central_pedestal_2", p -> p.mapColor(MapColor.COLOR_ORANGE));
+    public static final DeferredItem<BlockItem> CENTRAL_PEDESTAL_2_ITEM = ITEMS.registerSimpleBlockItem("central_pedestal_2", CENTRAL_PEDESTAL_2);
+
     // Crude Brush item — crafted from ink sac + stick + string
     public static final DeferredItem<Item> CRUDE_BRUSH = ITEMS.registerSimpleItem("crude_brush");
 
@@ -63,6 +67,7 @@ public class BetterEnchanting {
             .displayItems((parameters, output) -> {
                 output.accept(CRUDE_BRUSH.get());
                 output.accept(STONE_TABLET.get());
+                output.accept(CENTRAL_PEDESTAL_2_ITEM.get());
             }).build());
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.
