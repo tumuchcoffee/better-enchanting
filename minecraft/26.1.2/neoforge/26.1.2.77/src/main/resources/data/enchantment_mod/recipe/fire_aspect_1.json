@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "enchantment_mod:crude_brush",
+    "minecraft:lapis_lazuli",
+    "minecraft:paper",
+    "minecraft:fire_charge"
+  ],
+  "result": {
+    "id": "minecraft:enchanted_book",
+    "components": {
+      "minecraft:stored_enchantments": {
+        "levels": {
+          "minecraft:fire_aspect": 1
+        },
+        "show_in_tooltip": true
+      }
+    }
+  }
+}
