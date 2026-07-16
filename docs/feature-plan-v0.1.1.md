@@ -55,7 +55,7 @@ Register the five tiered pedestal blocks and implement multiblock structure dete
 
 ### Crafting Recipes
 
-**Level 2 Central Pedestal** — shaped crafting table recipe:
+**Central Pedestal II** — shaped crafting table recipe:
 
 |  | Left | Centre | Right |
 |---|---|---|---|
