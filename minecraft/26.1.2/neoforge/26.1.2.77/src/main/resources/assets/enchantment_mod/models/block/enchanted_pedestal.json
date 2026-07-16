@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "enchantment_mod:block/center_pedestal_bottom",
+    "top": "enchantment_mod:block/center_pedestal_top",
+    "side": "enchantment_mod:block/center_pedestal_side"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "enchantment_mod:block/enchanted_pedestal"
+    }
+  }
+}
