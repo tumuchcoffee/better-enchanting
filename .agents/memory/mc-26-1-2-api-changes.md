@@ -21,6 +21,15 @@ description: Breaking API changes in MC 26.1.2 / NeoForge 26.1.2.77 vs earlier v
   @Override public MapCodec<MyBlock> codec() { return CODEC; }
   ```
 
+## Block registration
+
+- **Never use `BLOCKS.register(name, Supplier)` for custom block subclasses.** That overload does NOT inject the block's `ResourceKey` into `BlockBehaviour.Properties`, causing a runtime NPE "Block id not set" when `BlockEntityType` validates the block, and leaving the `DeferredHolder` unbound so subsequent `.get()` calls throw "unbound value".
+- Use `BLOCKS.registerBlock(name, Function<BlockBehaviour.Properties, B>)` instead — this injects `.setId(key)` before calling the factory.
+- `BLOCKS.registerSimpleBlock(name, UnaryOperator<Properties>)` also works the same way for plain `Block` subclasses.
+- `BlockEntityType.Builder` does **not** exist in 26.1.x (NeoForge source javadoc comments reference it but it was removed). Use `new BlockEntityType<>(factory, block1, block2, ...)` direct constructor.
+
+**Why:** `register(name, Supplier)` bypasses NeoForge's ID-injection step. The `BlockEntityType` constructor validates each block via `BuiltInRegistries.BLOCK`, and a block without its `ResourceKey` set on its `Properties` is considered unregistered, producing NPE + cascade "unbound value" errors at world load.
+
 ## Block entities
 
 - `saveAdditional` and `loadAdditional` signatures changed: they take `ValueOutput`/`ValueInput` (package `net.minecraft.world.level.storage`), **not** `CompoundTag`/`HolderLookup.Provider`.

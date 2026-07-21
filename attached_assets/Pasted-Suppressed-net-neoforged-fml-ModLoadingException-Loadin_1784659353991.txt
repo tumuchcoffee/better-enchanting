@@ -1,0 +1,36 @@
+Suppressed: net.neoforged.fml.ModLoadingException: Loading errors encountered:
+	- Enchantment Mod (enchantment_mod) encountered an error while dispatching the net.neoforged.neoforge.registries.RegisterEvent event
+	  java.lang.NullPointerException: Block id not set
+
+		at net.neoforged.fml.ModContainer.acceptEvent(ModContainer.java:181)
+		at net.neoforged.fml.ModLoader.lambda$postEventWithWrapInModOrder$0(ModLoader.java:351)
+		at java.base/java.lang.Iterable.forEach(Unknown Source)
+		at net.neoforged.fml.ModList.forEachModInOrder(ModList.java:175)
+		at net.neoforged.fml.ModLoader.postEventWithWrapInModOrder(ModLoader.java:349)
+		at net.neoforged.fml.ModLoader.postEventWrapContainerInModOrder(ModLoader.java:340)
+		at TRANSFORMER/neoforge@26.1.2.77/net.neoforged.neoforge.registries.GameData.postRegisterEvents(GameData.java:90)
+		... 5 more
+	Suppressed: net.neoforged.fml.ModLoadingException: Loading errors encountered:
+	- Enchantment Mod (enchantment_mod) encountered an error while dispatching the net.neoforged.neoforge.registries.RegisterEvent event
+	  java.lang.NullPointerException: Trying to access unbound value: ResourceKey[minecraft:block / enchantment_mod:central_pedestal_2]
+
+		at net.neoforged.fml.ModContainer.acceptEvent(ModContainer.java:181)
+		at net.neoforged.fml.ModLoader.lambda$postEventWithWrapInModOrder$0(ModLoader.java:351)
+		at java.base/java.lang.Iterable.forEach(Unknown Source)
+		at net.neoforged.fml.ModList.forEachModInOrder(ModList.java:175)
+		at net.neoforged.fml.ModLoader.postEventWithWrapInModOrder(ModLoader.java:349)
+		at net.neoforged.fml.ModLoader.postEventWrapContainerInModOrder(ModLoader.java:340)
+		at TRANSFORMER/neoforge@26.1.2.77/net.neoforged.neoforge.registries.GameData.postRegisterEvents(GameData.java:90)
+		... 5 more
+	Suppressed: net.neoforged.fml.ModLoadingException: Loading errors encountered:
+	- Enchantment Mod (enchantment_mod) encountered an error while dispatching the net.neoforged.neoforge.registries.RegisterEvent event
+	  java.lang.NullPointerException: Trying to access unbound value: ResourceKey[minecraft:block / enchantment_mod:central_pedestal_2]
+
+		at net.neoforged.fml.ModContainer.acceptEvent(ModContainer.java:181)
+		at net.neoforged.fml.ModLoader.lambda$postEventWithWrapInModOrder$0(ModLoader.java:351)
+		at java.base/java.lang.Iterable.forEach(Unknown Source)
+		at net.neoforged.fml.ModList.forEachModInOrder(ModList.java:175)
+		at net.neoforged.fml.ModLoader.postEventWithWrapInModOrder(ModLoader.java:349)
+		at net.neoforged.fml.ModLoader.postEventWrapContainerInModOrder(ModLoader.java:340)
+		at TRANSFORMER/neoforge@26.1.2.77/net.neoforged.neoforge.registries.GameData.postRegisterEvents(GameData.java:90)
+		... 5 more
