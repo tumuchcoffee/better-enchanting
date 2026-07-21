@@ -45,7 +45,7 @@ public class CentralPedestalBlock extends BaseEntityBlock {
                                            BlockPos pos, Player player, InteractionHand hand,
                                            BlockHitResult hit) {
         if (stack.getItem() != Items.ENCHANTED_BOOK) {
-            return InteractionResult.TRY_WITH_EMPTY_HAND;
+            return InteractionResult.PASS;
         }
         if (level.getBlockEntity(pos) instanceof CentralPedestalBlockEntity pedestal) {
             if (pedestal.getStoredItem().isEmpty()) {
@@ -58,7 +58,7 @@ public class CentralPedestalBlock extends BaseEntityBlock {
                 return InteractionResult.SUCCESS;
             }
         }
-        return InteractionResult.TRY_WITH_EMPTY_HAND;
+        return InteractionResult.PASS;
     }
 
     @Override
