@@ -67,7 +67,7 @@ public class CentralPedestalBlockEntityRenderer implements BlockEntityRenderer<C
         poseStack.pushPose();
         poseStack.translate(0.5, 1.25 + state.bobOffset, 0.5);
         poseStack.mulPose(Axis.YP.rotationDegrees(state.yRot));
-        poseStack.scale(0.85f, 0.85f, 0.85f);
+        poseStack.scale(0.94f, 0.94f, 0.94f);
         state.item.submit(poseStack, submitNodeCollector, state.lightCoords, OverlayTexture.NO_OVERLAY, 0);
         poseStack.popPose();
     }
