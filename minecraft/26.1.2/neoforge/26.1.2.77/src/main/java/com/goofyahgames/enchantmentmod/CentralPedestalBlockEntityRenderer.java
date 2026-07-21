@@ -49,7 +49,7 @@ public class CentralPedestalBlockEntityRenderer implements BlockEntityRenderer<C
             Level level = blockEntity.getLevel();
             if (level != null) {
                 state.item = new ItemStackRenderState();
-                this.itemModelResolver.updateForTopItem(state.item, stack, ItemDisplayContext.FIXED, level, null, 0);
+                this.itemModelResolver.updateForTopItem(state.item, stack, ItemDisplayContext.GROUND, level, null, 0);
             }
 
             double dx = cameraPosition.x - (blockEntity.getBlockPos().getX() + 0.5);
@@ -67,7 +67,7 @@ public class CentralPedestalBlockEntityRenderer implements BlockEntityRenderer<C
         poseStack.pushPose();
         poseStack.translate(0.5, 1.25 + state.bobOffset, 0.5);
         poseStack.mulPose(Axis.YP.rotationDegrees(state.yRot));
-        poseStack.scale(1.0f, 1.0f, 1.0f);
+        poseStack.scale(0.85f, 0.85f, 0.85f);
         state.item.submit(poseStack, submitNodeCollector, state.lightCoords, OverlayTexture.NO_OVERLAY, 0);
         poseStack.popPose();
     }
