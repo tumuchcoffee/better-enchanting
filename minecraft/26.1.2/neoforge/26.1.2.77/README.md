@@ -12,7 +12,7 @@ A NeoForge mod for Minecraft that reimagines the enchanting system around a cent
 | Gradle | `9.2.1` (wrapper) |
 | Mod id | `enchantment_mod` |
 | Root namespace / group | `com.goofyahgames.enchantmentmod` |
-| Mod version | `0.1.0` |
+| Mod version | `0.1.2` |
 
 ### Project Structure
 - Mod lives at `minecraft/26.1.2/neoforge/26.1.2.77/` — the path deliberately encodes MC version / loader / loader version, so other version combinations can sit alongside it later.
