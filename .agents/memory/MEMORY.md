@@ -1,2 +1,3 @@
 - [Long Minecraft/Gradle builds in this sandbox](minecraft-mod-build.md) — first-time NeoForge decompiles need a temporary workflow, not bash; foojay auto-downloads missing JDKs.
 - [Minecraft recipe ingredient format](minecraft-recipe-format.md) — 1.21.2+/26.x recipes use plain item-ID strings, not {"item":...}; bad ingredient silently skips the recipe.
+- [MC 26.1.2 / NeoForge 26.1.2.77 API changes](mc-26-1-2-api-changes.md) — Block codec(), InteractionResult sealed interface, BlockEntityType direct constructor, ValueOutput/ValueInput save/load, new three-method BER API with BlockEntityRenderState.
