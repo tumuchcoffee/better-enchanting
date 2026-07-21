@@ -46,8 +46,8 @@ public class BetterEnchanting {
 
     // Level 2 central pedestal — crafted from copper ingots, glass, and deepslate
     public static final DeferredBlock<CentralPedestalBlock> CENTRAL_PEDESTAL_2 =
-            BLOCKS.register("central_pedestal_2", () -> new CentralPedestalBlock(
-                    BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_ORANGE).noOcclusion()));
+            BLOCKS.registerBlock("central_pedestal_2", props -> new CentralPedestalBlock(
+                    props.mapColor(MapColor.COLOR_ORANGE).noOcclusion()));
     public static final DeferredItem<BlockItem> CENTRAL_PEDESTAL_2_ITEM =
             ITEMS.registerSimpleBlockItem("central_pedestal_2", CENTRAL_PEDESTAL_2);
 
