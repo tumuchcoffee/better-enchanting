@@ -6,7 +6,6 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.RenderShape;
@@ -67,7 +66,7 @@ public class CentralPedestalBlock extends BaseEntityBlock {
                 }
                 return InteractionResult.SUCCESS;
             }
-            if (stack.getItem() == Items.ENCHANTED_BOOK) {
+            if (!stack.isEmpty()) {
                 if (!level.isClientSide()) {
                     pedestal.setStoredItem(stack.copyWithCount(1));
                     stack.shrink(1);
