@@ -41,16 +41,16 @@ public class CentralPedestalBlock extends BaseEntityBlock {
     }
 
     @Override
-    public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean movedByPiston) {
-        if (!state.is(newState.getBlock())) {
-            if (level.getBlockEntity(pos) instanceof CentralPedestalBlockEntity pedestal) {
-                ItemStack stored = pedestal.getStoredItem();
-                if (!stored.isEmpty()) {
-                    popResource(level, pos, stored);
-                }
+    public BlockState playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
+        if (level.getBlockEntity(pos) instanceof CentralPedestalBlockEntity pedestal) {
+            ItemStack stored = pedestal.getStoredItem();
+            if (!stored.isEmpty()) {
+                popResource(level, pos, stored);
+                pedestal.setStoredItem(ItemStack.EMPTY);
+                pedestal.setChanged();
             }
         }
-        super.onRemove(state, level, pos, newState, movedByPiston);
+        return super.playerWillDestroy(level, pos, state, player);
     }
 
     @Override
