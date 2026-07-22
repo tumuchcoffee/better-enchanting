@@ -6,7 +6,6 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseEntityBlock;
@@ -66,14 +65,33 @@ public class CentralPedestalBlock extends BaseEntityBlock {
     }
 
     @Override
+    public BlockState playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
+        if (level.getBlockEntity(pos) instanceof CentralPedestalBlockEntity pedestal) {
+            ItemStack stored = pedestal.getStoredItem();
+            if (!stored.isEmpty()) {
+                popResource(level, pos, stored);
+                pedestal.setStoredItem(ItemStack.EMPTY);
+                pedestal.setChanged();
+            }
+        }
+        return super.playerWillDestroy(level, pos, state, player);
+    }
+
+    @Override
     protected InteractionResult useItemOn(ItemStack stack, BlockState state, Level level,
                                            BlockPos pos, Player player, InteractionHand hand,
                                            BlockHitResult hit) {
-        if (stack.getItem() != Items.ENCHANTED_BOOK) {
-            return InteractionResult.PASS;
-        }
         if (level.getBlockEntity(pos) instanceof CentralPedestalBlockEntity pedestal) {
-            if (pedestal.getStoredItem().isEmpty()) {
+            if (!pedestal.getStoredItem().isEmpty()) {
+                if (!level.isClientSide()) {
+                    player.getInventory().placeItemBackInInventory(pedestal.getStoredItem());
+                    pedestal.setStoredItem(ItemStack.EMPTY);
+                    pedestal.setChanged();
+                    level.sendBlockUpdated(pos, state, state, 3);
+                }
+                return InteractionResult.SUCCESS;
+            }
+            if (!stack.isEmpty()) {
                 if (!level.isClientSide()) {
                     pedestal.setStoredItem(stack.copyWithCount(1));
                     stack.shrink(1);
