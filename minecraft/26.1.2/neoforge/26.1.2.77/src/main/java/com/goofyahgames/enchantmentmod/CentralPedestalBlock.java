@@ -41,6 +41,19 @@ public class CentralPedestalBlock extends BaseEntityBlock {
     }
 
     @Override
+    public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean movedByPiston) {
+        if (!state.is(newState.getBlock())) {
+            if (level.getBlockEntity(pos) instanceof CentralPedestalBlockEntity pedestal) {
+                ItemStack stored = pedestal.getStoredItem();
+                if (!stored.isEmpty()) {
+                    popResource(level, pos, stored);
+                }
+            }
+        }
+        super.onRemove(state, level, pos, newState, movedByPiston);
+    }
+
+    @Override
     protected InteractionResult useItemOn(ItemStack stack, BlockState state, Level level,
                                            BlockPos pos, Player player, InteractionHand hand,
                                            BlockHitResult hit) {
