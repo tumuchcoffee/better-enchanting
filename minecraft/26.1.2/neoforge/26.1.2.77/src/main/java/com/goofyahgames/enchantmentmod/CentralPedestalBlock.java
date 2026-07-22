@@ -44,11 +44,17 @@ public class CentralPedestalBlock extends BaseEntityBlock {
     protected InteractionResult useItemOn(ItemStack stack, BlockState state, Level level,
                                            BlockPos pos, Player player, InteractionHand hand,
                                            BlockHitResult hit) {
-        if (stack.getItem() != Items.ENCHANTED_BOOK) {
-            return InteractionResult.PASS;
-        }
         if (level.getBlockEntity(pos) instanceof CentralPedestalBlockEntity pedestal) {
-            if (pedestal.getStoredItem().isEmpty()) {
+            if (!pedestal.getStoredItem().isEmpty()) {
+                if (!level.isClientSide()) {
+                    player.getInventory().placeItemBackInInventory(pedestal.getStoredItem());
+                    pedestal.setStoredItem(ItemStack.EMPTY);
+                    pedestal.setChanged();
+                    level.sendBlockUpdated(pos, state, state, 3);
+                }
+                return InteractionResult.SUCCESS;
+            }
+            if (stack.getItem() == Items.ENCHANTED_BOOK) {
                 if (!level.isClientSide()) {
                     pedestal.setStoredItem(stack.copyWithCount(1));
                     stack.shrink(1);
