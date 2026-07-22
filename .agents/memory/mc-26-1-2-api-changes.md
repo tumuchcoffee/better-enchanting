@@ -9,6 +9,11 @@ description: Breaking API changes in MC 26.1.2 / NeoForge 26.1.2.77 vs earlier v
 
 ---
 
+## Block shape methods
+
+- `getOcclusionShape` signature simplified to **`(BlockState state)`** only — old 3-param form `(BlockState, BlockGetter, BlockPos)` no longer exists in the supertype and will cause `@Override` compile error. Confirmed from decompiled `BlockBehaviour` source in `minecraft-patched-26.1.2.77-sources.jar`.
+- `getShape` and `getCollisionShape` still take the full 4-param form `(BlockState, BlockGetter, BlockPos, CollisionContext)`.
+
 ## Block interactions
 
 - `InteractionResult` is now a **sealed interface** (not an enum). Constants: `SUCCESS`, `SUCCESS_SERVER`, `CONSUME`, `FAIL`, `PASS`, `TRY_WITH_EMPTY_HAND`.

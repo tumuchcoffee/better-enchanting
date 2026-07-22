@@ -59,8 +59,7 @@ public class CentralPedestalBlock extends BaseEntityBlock {
     }
 
     @Override
-    protected VoxelShape getOcclusionShape(BlockState state, BlockGetter level,
-                                            BlockPos pos) {
+    protected VoxelShape getOcclusionShape(BlockState state) {
         return SHAPE;
     }
 
