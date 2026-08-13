@@ -14,9 +14,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntityType;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
-import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
@@ -54,15 +52,15 @@ public class BetterEnchanting {
                     new BlockEntityType<>(OuterPedestalBlockEntity::new, OUTER_PEDESTAL.get()));
 
     // Level 2 central pedestal — crafted from copper ingots, glass, and deepslate
-    public static final DeferredBlock<CentralPedestalBlock> CENTRAL_PEDESTAL_2 =
-            BLOCKS.registerBlock("central_pedestal_2", props -> new CentralPedestalBlock(
+    public static final DeferredBlock<CentralPedestalBlock> CENTRAL_PEDESTAL_1 =
+            BLOCKS.registerBlock("central_pedestal_1", props -> new CentralPedestalBlock(
                     props.mapColor(MapColor.COLOR_ORANGE).noOcclusion()));
-    public static final DeferredItem<BlockItem> CENTRAL_PEDESTAL_2_ITEM =
-            ITEMS.registerSimpleBlockItem("central_pedestal_2", CENTRAL_PEDESTAL_2);
+    public static final DeferredItem<BlockItem> CENTRAL_PEDESTAL_1_ITEM =
+            ITEMS.registerSimpleBlockItem("central_pedestal_1", CENTRAL_PEDESTAL_1);
 
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<CentralPedestalBlockEntity>> CENTRAL_PEDESTAL_BE_TYPE =
-            BLOCK_ENTITY_TYPES.register("central_pedestal_2", () ->
-                    new BlockEntityType<>(CentralPedestalBlockEntity::new, CENTRAL_PEDESTAL_2.get()));
+            BLOCK_ENTITY_TYPES.register("central_pedestal_1", () ->
+                    new BlockEntityType<>(CentralPedestalBlockEntity::new, CENTRAL_PEDESTAL_1.get()));
 
     // Crude Brush item — crafted from ink sac + stick + string
     public static final DeferredItem<Item> CRUDE_BRUSH = ITEMS.registerSimpleItem("crude_brush");

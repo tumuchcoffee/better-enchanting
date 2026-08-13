@@ -24,7 +24,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "enchantment_mod:central_pedestal_2"
+        "recipe": "enchantment_mod:central_pedestal_1"
       }
     }
   },
@@ -37,7 +37,7 @@
   ],
   "rewards": {
     "recipes": [
-      "enchantment_mod:central_pedestal_2"
+      "enchantment_mod:central_pedestal_1"
     ]
   }
 }
