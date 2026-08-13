@@ -44,6 +44,15 @@ public class BetterEnchanting {
     public static final DeferredBlock<Block> PEDESTAL = BLOCKS.registerSimpleBlock("enchanted_pedestal", p -> p.mapColor(MapColor.STONE));
     public static final DeferredItem<BlockItem> PEDESTAL_ITEM = ITEMS.registerSimpleBlockItem("enchanted_pedestal", PEDESTAL);
 
+    public static final DeferredBlock<OuterPedestalBlock> OUTER_PEDESTAL =
+            BLOCKS.registerBlock("outer_pedestal", props -> new OuterPedestalBlock(
+                    props.mapColor(MapColor.STONE).noOcclusion()));
+    public static final DeferredItem<BlockItem> OUTER_PEDESTAL_ITEM = ITEMS.registerSimpleBlockItem("outer_pedestal", OUTER_PEDESTAL);
+
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<OuterPedestalBlockEntity>> OUTER_PEDESTAL_BE_TYPE =
+            BLOCK_ENTITY_TYPES.register("outer_pedestal", () ->
+                    new BlockEntityType<>(OuterPedestalBlockEntity::new, OUTER_PEDESTAL.get()));
+
     // Level 2 central pedestal — crafted from copper ingots, glass, and deepslate
     public static final DeferredBlock<CentralPedestalBlock> CENTRAL_PEDESTAL_2 =
             BLOCKS.registerBlock("central_pedestal_2", props -> new CentralPedestalBlock(
@@ -69,6 +78,7 @@ public class BetterEnchanting {
                 output.accept(CRUDE_BRUSH.get());
                 output.accept(STONE_TABLET.get());
                 output.accept(CENTRAL_PEDESTAL_2_ITEM.get());
+                output.accept(OUTER_PEDESTAL_ITEM.get());
             }).build());
 
     public BetterEnchanting(IEventBus modEventBus, ModContainer modContainer) {

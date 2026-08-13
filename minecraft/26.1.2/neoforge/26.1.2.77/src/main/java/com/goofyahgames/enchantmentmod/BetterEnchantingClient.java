@@ -30,5 +30,9 @@ public class BetterEnchantingClient {
                 BetterEnchanting.CENTRAL_PEDESTAL_BE_TYPE.get(),
                 CentralPedestalBlockEntityRenderer::new
         );
+        event.registerBlockEntityRenderer(
+                BetterEnchanting.OUTER_PEDESTAL_BE_TYPE.get(),
+                OuterPedestalBlockEntityRenderer::new
+        );
     }
 }
