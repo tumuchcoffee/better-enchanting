@@ -75,7 +75,7 @@ public class BetterEnchanting {
             .displayItems((parameters, output) -> {
                 output.accept(CRUDE_BRUSH.get());
                 output.accept(STONE_TABLET.get());
-                output.accept(CENTRAL_PEDESTAL_2_ITEM.get());
+                output.accept(CENTRAL_PEDESTAL_1_ITEM.get());
                 output.accept(OUTER_PEDESTAL_ITEM.get());
             }).build());
 
