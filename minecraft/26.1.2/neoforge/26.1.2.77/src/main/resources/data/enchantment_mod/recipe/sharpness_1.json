@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "minecraft:book",
+    "minecraft:stone_sword",
+    "minecraft:flint",
+    "minecraft:flint",
+    "minecraft:andesite",
+    "minecraft:lapis_lazuli"
+  ],
+  "result": {
+    "id": "minecraft:enchanted_book",
+    "count": 1,
+    "components": {
+      "minecraft:stored_enchantments": {
+        "levels": {
+          "minecraft:sharpness": 1
+        },
+        "show_in_tooltip": true
+      }
+    }
+  }
+}

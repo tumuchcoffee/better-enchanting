@@ -15,6 +15,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 import javax.annotation.Nullable;
@@ -23,8 +24,14 @@ public class OuterPedestalBlock extends BaseEntityBlock {
 
     public static final MapCodec<OuterPedestalBlock> CODEC = simpleCodec(OuterPedestalBlock::new);
 
-    // Full-width, and full-height to match the pedestal's raised top disc
-    private static final VoxelShape SHAPE = Block.box(0.0, 0.0, 0.0, 16.0, 16.0, 16.0);
+    // Matches the model geometry: base slab, lower column, center post, top disc, top cap
+    private static final VoxelShape SHAPE = Shapes.or(
+            Block.box(0.0, 0.0, 0.0, 16.0, 4.0, 16.0),
+            Block.box(2.0, 4.0, 2.0, 14.0, 7.0, 14.0),
+            Block.box(6.0, 7.0, 6.0, 10.0, 12.0, 10.0),
+            Block.box(2.0, 12.0, 2.0, 14.0, 15.0, 14.0),
+            Block.box(4.0, 15.0, 4.0, 12.0, 16.0, 12.0)
+    );
 
     public OuterPedestalBlock(Properties properties) {
         super(properties);

@@ -65,7 +65,7 @@ public class OuterPedestalBlockEntityRenderer implements BlockEntityRenderer<Out
         if (state.item == null) return;
 
         poseStack.pushPose();
-        poseStack.translate(0.5, 1.25 + state.bobOffset, 0.5);
+        poseStack.translate(0.5, 1.05 + state.bobOffset, 0.5);
         poseStack.mulPose(Axis.YP.rotationDegrees(state.yRot));
         poseStack.scale(0.94f, 0.94f, 0.94f);
         state.item.submit(poseStack, submitNodeCollector, state.lightCoords, OverlayTexture.NO_OVERLAY, 0);

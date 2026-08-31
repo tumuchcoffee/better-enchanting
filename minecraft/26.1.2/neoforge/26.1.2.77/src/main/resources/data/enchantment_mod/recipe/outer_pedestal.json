@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "GSG",
+    "SSS"
+  ],
+  "key": {
+    "S": "minecraft:stone",
+    "G": "minecraft:glass"
+  },
+  "result": {
+    "id": "enchantment_mod:outer_pedestal",
+    "count": 1
+  }
+}

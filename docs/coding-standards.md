@@ -1,5 +1,7 @@
 # Coding Standards — Better Enchanting
 
+This mod is closely connected to the exact version of the minecraft and neoforge. When decided on a solution, dont guess, dont use your training data, check your solution against the matching version of minecraft and/or neoforge. These two jar files have already been decompiled for this reason. Check those first.
+
 ## Package & Naming
 
 - **Package:** `com.goofyahgames.enchantmentmod` — flat, no sub-packages

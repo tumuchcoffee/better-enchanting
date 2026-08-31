@@ -4,10 +4,10 @@
 
 **Better Enchanting** is a Minecraft NeoForge mod that replaces vanilla's RNG enchanting table with a **progressive tiered crafting system**:
 
-| Enchantment Level | How You Get It |
-|---|---|
-| Level 1 | Shapeless crafting recipe at a crafting table |
-| Levels 2–5 | Multiblock structure: a center pedestal surrounded by 8 outer pedestals |
+| Enchantment Level | How You Get It                                                          |
+| ----------------- | ----------------------------------------------------------------------- |
+| Level 1           | Shapeless crafting recipe at a crafting table                           |
+| Levels 2–5       | Multiblock structure: a center pedestal surrounded by 8 outer pedestals |
 
 Players upgrade pedestals with better materials (stone → Nether → etc.) rather than building separate setups. The mod id is `enchantment_mod`, package is `com.goofyahgames.enchantmentmod`.
 
@@ -15,9 +15,10 @@ Players upgrade pedestals with better materials (stone → Nether → etc.) rath
 
 ## Workspace Layout
 
-This is a **dual-stack monorepo** — two entirely separate build systems coexist side by side:
+This is a **dual-stack monorepo** — two entirely separate build systems coexist side by side. The main set of code in the minecraft mod. The web app is for maintaining compatiblity with Replit.
 
 ### 🎮 The Minecraft Mod (this is the real project)
+
 ```
 minecraft/26.1.2/neoforge/26.1.2.77/
 ├── build.gradle              ← Gradle 9.2.1 + ModDevGradle 2.0.141
@@ -40,6 +41,7 @@ minecraft/26.1.2/neoforge/26.1.2.77/
 ```
 
 ### 🌐 The pnpm Monorepo (unused scaffolding — ignore unless asked)
+
 ```
 artifacts/api-server/        ← Express 5 + Drizzle + Pino
 artifacts/mockup-sandbox/    ← React 19 + Vite + shadcn/ui
@@ -72,11 +74,8 @@ First build takes 3–4 minutes. **Never interrupt it.** Subsequent builds are f
 ## Known Architectural Constraints
 
 1. **Registration order matters.** If something references a `ResourceKey` before `DeferredRegister` fires, you get `NullPointerException: Trying to access unbound value`. Always register blocks *before* anything that references them.
-
 2. **The version-encoded directory** (`minecraft/26.1.2/neoforge/26.1.2.77/`) is intentional — it allows multiple MC/loader version combos to coexist later.
-
 3. **Not all enchants scale to Level 5** (e.g., Mending tops out earlier). Check the design doc in `attached_assets/Better_Enchanting_1783377127066.md` before adding recipes.
-
 4. **Pedestal tiers aren't all implemented yet.** Only Tier 2 central and a single outer pedestal exist. Five tiers are planned.
 
 ---
